@@ -86,17 +86,33 @@ def fetch_apps():
     return {"all_apps": all_apps}
 
 def load_past_apps():
-    """Load past app data from JSON."""
+    """Load past app data from JSON safely, ensuring a valid dictionary structure."""
     if not os.path.exists(DATA_FILE):
-        return []
+        print("INFO: past_apps.json does not exist. Creating a new one.")
+        return {"all_apps": [], "new_apps": []}  # Default structure
+
     try:
         with open(DATA_FILE, "r") as f:
             data = f.read().strip()
-            past_apps = json.loads(data) if data else []
-            return past_apps if isinstance(past_apps, dict) else {"all_apps": [], "new_apps": []}
+            if not data:  # If file is empty, return default structure
+                print("WARNING: past_apps.json was empty. Resetting data.")
+                return {"all_apps": [], "new_apps": []}
+
+            past_apps = json.loads(data)
+
+            # Ensure past_apps is a dictionary
+            if isinstance(past_apps, dict):
+                return past_apps
+            elif isinstance(past_apps, list):  
+                print("WARNING: past_apps.json contained a list. Converting to expected format.")
+                return {"all_apps": past_apps, "new_apps": []}  # Wrap list in expected dict structure
+            else:
+                print("ERROR: Unexpected data format in past_apps.json. Resetting data.")
+                return {"all_apps": [], "new_apps": []}  
+
     except json.JSONDecodeError:
-        print("Warning: past_apps.json is corrupted. Resetting data.")
-        return {"all_apps": [], "new_apps": []}
+        print("ERROR: past_apps.json is corrupted. Resetting data.")
+        return {"all_apps": [], "new_apps": []}  
 
 def save_current_apps(data):
     """Save current apps to JSON."""
@@ -106,7 +122,11 @@ def save_current_apps(data):
 
 def compare_apps():
     """Compare current apps with past apps and detect new ones."""
-    past_data = load_past_apps()
+    past_data = load_past_apps()  # Ensure past_data is always initialized
+    if isinstance(past_data, list):
+        print("WARNING: past_data is a list, converting to dictionary format.")
+        past_data = {"all_apps": past_data, "new_apps": []}  # Wrap the list in a dictionary
+
     past_apps = past_data.get("all_apps", [])
     
     fetched_data = fetch_apps()

@@ -1,20 +1,28 @@
 {
     "all_apps": [
         {
-            "name": "RevenueHunt: Recommender Quiz",
-            "url": "https://apps.shopify.com/product-recommendation-quiz-revenuehunt"
-        },
-        {
-            "name": "Quiz Kit: AI Product Finder",
-            "url": "https://apps.shopify.com/quiz-kit"
-        },
-        {
             "name": "Octane AI: Advanced Quiz Maker",
             "url": "https://apps.shopify.com/octane-ai-quiz-personalization"
         },
         {
             "name": "Quizell: AI Product Finder",
             "url": "https://apps.shopify.com/quizell-product-recommendation"
+        },
+        {
+            "name": "Veeform \u2011 Product Quiz Builder",
+            "url": "https://apps.shopify.com/veeform-product-quiz-builder"
+        },
+        {
+            "name": "Quizive: AI Quiz Builder",
+            "url": "https://apps.shopify.com/quizive-app"
+        },
+        {
+            "name": "RevenueHunt: Recommender Quiz",
+            "url": "https://apps.shopify.com/product-recommendation-quiz-revenuehunt"
+        },
+        {
+            "name": "Quiz Kit: AI Product Finder",
+            "url": "https://apps.shopify.com/quiz-kit"
         },
         {
             "name": "Lantern AI Quiz Builder",
@@ -27,10 +35,6 @@
         {
             "name": "Tangent : Skin Quiz & Analysis",
             "url": "https://apps.shopify.com/tangent-1"
-        },
-        {
-            "name": "Veeform \u2011 Product Quiz Builder",
-            "url": "https://apps.shopify.com/veeform-product-quiz-builder"
         },
         {
             "name": "VQB: AI Product Quiz Builder",
@@ -69,10 +73,6 @@
             "url": "https://apps.shopify.com/askflow-ai"
         },
         {
-            "name": "Quizive: AI Quiz Builder",
-            "url": "https://apps.shopify.com/quizive-app"
-        },
-        {
             "name": "ConvertFlow: Landing Pages",
             "url": "https://apps.shopify.com/convertflow"
         },
@@ -97,20 +97,20 @@
             "url": "https://apps.shopify.com/courses"
         },
         {
-            "name": "Veeform \u2011 Product Quiz Builder",
-            "url": "https://apps.shopify.com/veeform-product-quiz-builder"
-        },
-        {
-            "name": "Quizive: AI Quiz Builder",
-            "url": "https://apps.shopify.com/quizive-app"
-        },
-        {
             "name": "POPSMASH: Fast AI Product Quiz",
             "url": "https://apps.shopify.com/popsmash"
         },
         {
+            "name": "Face Age AI Skin Analysis Quiz",
+            "url": "https://apps.shopify.com/face-age"
+        },
+        {
             "name": "Shopney \u2011 Mobile App Builder",
             "url": "https://apps.shopify.com/shopney-mobile-app"
+        },
+        {
+            "name": "Scarcity++ Low Stock Counter",
+            "url": "https://apps.shopify.com/almostgone-low-in-stock-alert"
         },
         {
             "name": "Alia: Email & SMS Popups",
@@ -177,10 +177,6 @@
             "url": "https://apps.shopify.com/pop-up-builder-wisepops"
         },
         {
-            "name": "Quiz Deals Email Popup Game",
-            "url": "https://apps.shopify.com/quiz-deals"
-        },
-        {
             "name": "AppsMav: Social Boost",
             "url": "https://apps.shopify.com/social-boost"
         },
@@ -209,8 +205,16 @@
             "url": "https://apps.shopify.com/purplepro"
         },
         {
-            "name": "Face Age AI Skin Analysis Quiz",
-            "url": "https://apps.shopify.com/face-age"
+            "name": "Live2.ai \u2011 Shoppable Videos",
+            "url": "https://apps.shopify.com/live2ai"
+        },
+        {
+            "name": "Speakeasy Shoppable Videos",
+            "url": "https://apps.shopify.com/speakeasy"
+        },
+        {
+            "name": "VanChat AI Chatbot & Live Chat",
+            "url": "https://apps.shopify.com/vanchat"
         },
         {
             "name": "QTA Quiz: Segment & Recommend",
@@ -219,14 +223,6 @@
         {
             "name": "Rushy Scarcity Countdown Timer",
             "url": "https://apps.shopify.com/scarcity-cart-countdown-timer"
-        },
-        {
-            "name": "Glood Product Recommendations",
-            "url": "https://apps.shopify.com/recommendation-kit"
-        },
-        {
-            "name": "Live2.ai \u2011 Shoppable Videos",
-            "url": "https://apps.shopify.com/live2ai"
         },
         {
             "name": "PaidQuiz",
