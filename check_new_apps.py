@@ -60,6 +60,7 @@ def fetch_apps():
             break
         
         seen_apps = set()
+        valid_apps = []
         for a_tag in app_links:
             try:
                 link = a_tag.get_attribute("href")
@@ -75,12 +76,17 @@ def fetch_apps():
                     continue
                 
                 seen_apps.add(clean_link)
-                all_apps.append({"name": title, "url": clean_link})
+                valid_apps.append({"name": title, "url": clean_link})
 
             except Exception as e:
                 print(f"🔥 Error processing app link: {e}")
         
+        all_apps.extend(valid_apps)
         page += 1
+    
+    # Assign proper ranking starting from 1
+    for i, app in enumerate(all_apps):
+        app["rank"] = i + 1
     
     driver.quit()
     return {"all_apps": all_apps}
@@ -89,30 +95,27 @@ def load_past_apps():
     """Load past app data from JSON safely, ensuring a valid dictionary structure."""
     if not os.path.exists(DATA_FILE):
         print("INFO: past_apps.json does not exist. Creating a new one.")
-        return {"all_apps": [], "new_apps": []}  # Default structure
+        return {"all_apps": [], "new_apps": [], "top_5": []}  # Default structure
 
     try:
         with open(DATA_FILE, "r") as f:
             data = f.read().strip()
-            if not data:  # If file is empty, return default structure
+            if not data:
                 print("WARNING: past_apps.json was empty. Resetting data.")
-                return {"all_apps": [], "new_apps": []}
+                return {"all_apps": [], "new_apps": [], "top_5": []}
 
             past_apps = json.loads(data)
-
-            # Ensure past_apps is a dictionary
             if isinstance(past_apps, dict):
                 return past_apps
             elif isinstance(past_apps, list):  
                 print("WARNING: past_apps.json contained a list. Converting to expected format.")
-                return {"all_apps": past_apps, "new_apps": []}  # Wrap list in expected dict structure
+                return {"all_apps": past_apps, "new_apps": [], "top_5": []}  
             else:
                 print("ERROR: Unexpected data format in past_apps.json. Resetting data.")
-                return {"all_apps": [], "new_apps": []}  
-
+                return {"all_apps": [], "new_apps": [], "top_5": []}  
     except json.JSONDecodeError:
         print("ERROR: past_apps.json is corrupted. Resetting data.")
-        return {"all_apps": [], "new_apps": []}  
+        return {"all_apps": [], "new_apps": [], "top_5": []}  
 
 def save_current_apps(data):
     """Save current apps to JSON."""
@@ -121,23 +124,36 @@ def save_current_apps(data):
         json.dump(data, f, indent=4)
 
 def compare_apps():
-    """Compare current apps with past apps and detect new ones."""
-    past_data = load_past_apps()  # Ensure past_data is always initialized
-    if isinstance(past_data, list):
-        print("WARNING: past_data is a list, converting to dictionary format.")
-        past_data = {"all_apps": past_data, "new_apps": []}  # Wrap the list in a dictionary
-
-    past_apps = past_data.get("all_apps", [])
+    """Compare current apps with past apps and detect ranking changes."""
+    past_data = load_past_apps()
+    past_apps = {app["name"]: app.get("rank", None) for app in past_data.get("all_apps", [])}
     
     fetched_data = fetch_apps()
     current_apps = fetched_data["all_apps"]
     
-    past_app_names = {app["name"] for app in past_apps if isinstance(app, dict)}
-    new_apps = [app for app in current_apps if app["name"] not in past_app_names]
-
+    ranking_changes = []
+    for app in current_apps:
+        prev_rank = past_apps.get(app["name"], None)
+        if prev_rank is not None and prev_rank != app["rank"]:
+            ranking_changes.append({"name": app["name"], "old_rank": prev_rank, "new_rank": app["rank"]})
+    
+    # Assign ranks starting at 1 for top 5
+    top_5 = [{"name": app["name"], "url": app["url"], "rank": i + 1} for i, app in enumerate(current_apps[:5])]
+    
+    past_top_5 = past_data.get("top_5", [])
+    past_top_5_names = {app["name"] for app in past_top_5}
+    current_top_5_names = {app["name"] for app in top_5}
+    
+    new_entries = current_top_5_names - past_top_5_names
+    removed_entries = past_top_5_names - current_top_5_names
+    
     output = {
         "all_apps": current_apps,
-        "new_apps": new_apps
+        "new_apps": [app for app in current_apps if app["name"] not in past_apps],
+        "ranking_changes": ranking_changes,
+        "top_5": top_5,
+        "new_top_5_entries": list(new_entries),
+        "removed_top_5_entries": list(removed_entries)
     }
 
     print(json.dumps(output, indent=4))
