@@ -25,11 +25,12 @@ def clean_url(url):
     parsed_url = urlparse(url)
     query_params = parse_qs(parsed_url.query)
     
-    # If any key contains 'surface', drop all UTM parameters
-    if any("surface" in k for k in query_params):
+    if any("surface" in k.lower() for k in query_params.keys()):
         return f"{parsed_url.scheme}://{parsed_url.netloc}{parsed_url.path}"
     
     return url
+
+BAD_URL_PATTERNS = re.compile(r"(categories|stories|sitemap|login|help|about|support)")
 
 def fetch_apps():
     """Fetch app names and links using <a> href extraction."""
@@ -43,50 +44,58 @@ def fetch_apps():
         search_url = f"{SHOPIFY_SEARCH_URL}&page={page}" if page > 1 else SHOPIFY_SEARCH_URL
         print(f"Scraping: {search_url}")
         driver.get(search_url)
-        time.sleep(5)  # Allow JavaScript to load
+        time.sleep(5)  # Static delay to prevent detection by Shopify
 
-        # Stop if 'Sorry, nothing here' is found in the app header
         if driver.find_elements(By.CSS_SELECTOR, "#app-header > div > p"):
             header_text = driver.find_element(By.CSS_SELECTOR, "#app-header > div > p").text
             if header_text.startswith("Sorry, nothing here"):
                 print("No more apps found. Stopping iteration.")
                 break
 
-        # Extract app elements
-        app_links = driver.find_elements(By.CSS_SELECTOR, "a[href^='https://apps.shopify.com/']")
+        app_cards = driver.find_elements(By.CSS_SELECTOR, "[data-controller='app-card']")
         
-        if not app_links:
+        if not app_cards:
             print(f"No apps found on page {page}. Stopping iteration.")
             break
         
-        seen_apps = set()
+        seen_ads = set()
+        seen_organic = set()
         valid_apps = []
-        for a_tag in app_links:
-            try:
-                link = a_tag.get_attribute("href")
-                title = a_tag.text.strip()
-                clean_link = clean_url(link)
-                
-                # Ignore pagination links and unwanted categories
-                if re.fullmatch(r"\d+", title) or "/categories/" in clean_link or "/stories/" in clean_link or "auth=" in clean_link or "/sitemap" in clean_link or title in ["Previous", "Next"]:
-                    continue
-                
-                # Ensure valid title & link, and avoid duplicates
-                if not title or not clean_link or clean_link in seen_apps:
-                    continue
-                
-                seen_apps.add(clean_link)
-                valid_apps.append({"name": title, "url": clean_link})
+        rank = len([app for app in all_apps if not app["ad"]])  # Maintain correct ranking
 
+        for card in app_cards:
+            try:
+                link_element = card.find_element(By.CSS_SELECTOR, "a[href^='https://apps.shopify.com/']")
+                link = link_element.get_attribute("href")
+                title = link_element.text.strip()
+                clean_link = clean_url(link)
+                is_ad = bool(card.find_elements(By.CSS_SELECTOR, "[data-controller='popover-modal']"))
+                
+                if not title or not clean_link:
+                    continue
+                
+                if BAD_URL_PATTERNS.search(clean_link) or re.fullmatch(r"\d+", title) or title in ["Previous", "Next"]:
+                    continue
+                
+                # Allow the same app to appear twice if once as an ad and once organically
+                if is_ad:
+                    if clean_link in seen_ads:
+                        continue  # Skip duplicate ads
+                    seen_ads.add(clean_link)
+                else:
+                    if clean_link in seen_organic:
+                        continue  # Skip duplicate organic results
+                    seen_organic.add(clean_link)
+                    rank += 1  # Only increment rank for organic apps
+                
+                app_entry = {"name": title, "url": clean_link, "ad": is_ad, "rank": None if is_ad else rank}
+                valid_apps.append(app_entry)
+            
             except Exception as e:
                 print(f"🔥 Error processing app link: {e}")
         
         all_apps.extend(valid_apps)
         page += 1
-    
-    # Assign proper ranking starting from 1
-    for i, app in enumerate(all_apps):
-        app["rank"] = i + 1
     
     driver.quit()
     return {"all_apps": all_apps}
@@ -137,27 +146,8 @@ def compare_apps():
         if prev_rank is not None and prev_rank != app["rank"]:
             ranking_changes.append({"name": app["name"], "old_rank": prev_rank, "new_rank": app["rank"]})
     
-    # Assign ranks starting at 1 for top 5
-    top_5 = [{"name": app["name"], "url": app["url"], "rank": i + 1} for i, app in enumerate(current_apps[:5])]
-    
-    past_top_5 = past_data.get("top_5", [])
-    past_top_5_names = {app["name"] for app in past_top_5}
-    current_top_5_names = {app["name"] for app in top_5}
-    
-    new_entries = current_top_5_names - past_top_5_names
-    removed_entries = past_top_5_names - current_top_5_names
-    
-    output = {
-        "all_apps": current_apps,
-        "new_apps": [app for app in current_apps if app["name"] not in past_apps],
-        "ranking_changes": ranking_changes,
-        "top_5": top_5,
-        "new_top_5_entries": list(new_entries),
-        "removed_top_5_entries": list(removed_entries)
-    }
-
-    print(json.dumps(output, indent=4))
-    save_current_apps(output)
+    print(json.dumps({"all_apps": current_apps, "ranking_changes": ranking_changes}, indent=4))
+    save_current_apps({"all_apps": current_apps, "ranking_changes": ranking_changes})
 
 if __name__ == "__main__":
     compare_apps()
