@@ -1,16 +1,20 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from datetime import datetime
 import json
 import os
 import re
 import time
+import csv
 from urllib.parse import urlparse, parse_qs, urlencode
+
 
 # Constants
 SHOPIFY_SEARCH_URL = "https://apps.shopify.com/search?q=Quiz"
 DATA_FILE = "data/past_apps.json"
 CHROMEDRIVER_PATH = "/opt/homebrew/bin/chromedriver"  # Updated path
+CSV_FOLDER = "data/csv_exports"
 
 # Configure Selenium
 chrome_options = webdriver.ChromeOptions()
@@ -132,22 +136,60 @@ def save_current_apps(data):
     with open(DATA_FILE, "w") as f:
         json.dump(data, f, indent=4)
 
+def save_all_data_to_csv(filename, app_data):
+    """Save all app data into a single CSV file with section headers."""
+    os.makedirs(CSV_FOLDER, exist_ok=True)
+    filepath = os.path.join(CSV_FOLDER, filename)
+
+    with open(filepath, "w", newline="") as f:
+        writer = csv.writer(f)
+
+        # Write section: All Apps
+        writer.writerow(["[All Apps]"])
+        writer.writerow(["name", "url", "ad", "rank"])
+        writer.writerows([[app["name"], app["url"], app["ad"], app["rank"]] for app in app_data["all_apps"]])
+        writer.writerow([])  # Blank line for separation
+
+        # Write section: New Apps
+        writer.writerow(["[New Apps]"])
+        writer.writerow(["name", "url", "ad", "rank"])
+        writer.writerows([[app["name"], app["url"], app["ad"], app["rank"]] for app in app_data["new_apps"]])
+        writer.writerow([])
+
+        # Write section: Top 5
+        writer.writerow(["[Top 5]"])
+        writer.writerow(["name", "url", "ad", "rank"])
+        writer.writerows([[app["name"], app["url"], app["ad"], app["rank"]] for app in app_data["top_5"]])
+
+    print(f"✅ CSV saved: {filepath}")
+
+
 def compare_apps():
     """Compare current apps with past apps and detect ranking changes."""
     past_data = load_past_apps()
     past_apps = {app["name"]: app.get("rank", None) for app in past_data.get("all_apps", [])}
-    
+
     fetched_data = fetch_apps()
     current_apps = fetched_data["all_apps"]
-    
+
     ranking_changes = []
     for app in current_apps:
         prev_rank = past_apps.get(app["name"], None)
         if prev_rank is not None and prev_rank != app["rank"]:
             ranking_changes.append({"name": app["name"], "old_rank": prev_rank, "new_rank": app["rank"]})
-    
-    print(json.dumps({"all_apps": current_apps, "ranking_changes": ranking_changes}, indent=4))
-    save_current_apps({"all_apps": current_apps, "ranking_changes": ranking_changes})
+
+    output = {
+        "all_apps": current_apps,
+        "new_apps": [app for app in current_apps if app["name"] not in past_apps],
+        "ranking_changes": ranking_changes,
+        "top_5": [app for app in current_apps if not app["ad"]][:5],  # Exclude ads, keep only first 5 organic apps
+    }
+
+    print(json.dumps(output, indent=4))
+    save_current_apps(output)
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    csv_filename = f"apps_data_{timestamp}.csv"
+    save_all_data_to_csv(csv_filename, output)  # Use unique filename
 
 if __name__ == "__main__":
     compare_apps()

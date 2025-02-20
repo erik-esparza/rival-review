@@ -1,26 +1,26 @@
 {
     "all_apps": [
         {
+            "name": "RevenueHunt: Recommender Quiz",
+            "url": "https://apps.shopify.com/product-recommendation-quiz-revenuehunt",
+            "ad": true,
+            "rank": null
+        },
+        {
+            "name": "Quiz Kit: AI Product Finder",
+            "url": "https://apps.shopify.com/quiz-kit",
+            "ad": true,
+            "rank": null
+        },
+        {
             "name": "Octane AI: Advanced Quiz Maker",
             "url": "https://apps.shopify.com/octane-ai-quiz-personalization",
             "ad": true,
             "rank": null
         },
         {
-            "name": "Veeform \u2011 Product Quiz Builder",
-            "url": "https://apps.shopify.com/veeform-product-quiz-builder",
-            "ad": true,
-            "rank": null
-        },
-        {
-            "name": "Quizive: AI Quiz Builder",
-            "url": "https://apps.shopify.com/quizive-app",
-            "ad": true,
-            "rank": null
-        },
-        {
-            "name": "POPSMASH: Fast AI Product Quiz",
-            "url": "https://apps.shopify.com/popsmash",
+            "name": "Quizell AI Quiz & Form Builder",
+            "url": "https://apps.shopify.com/quizell-product-recommendation",
             "ad": true,
             "rank": null
         },
@@ -67,20 +67,20 @@
             "rank": 7
         },
         {
-            "name": "Veeform \u2011 Product Quiz Builder",
-            "url": "https://apps.shopify.com/veeform-product-quiz-builder",
+            "name": "Byte: Product Recommender Quiz",
+            "url": "https://apps.shopify.com/byte",
             "ad": false,
             "rank": 8
         },
         {
-            "name": "Recomma: Product Quiz Builder",
-            "url": "https://apps.shopify.com/quiz-builder-3",
+            "name": "Veeform \u2011 Product Quiz Builder",
+            "url": "https://apps.shopify.com/veeform-product-quiz-builder",
             "ad": false,
             "rank": 9
         },
         {
-            "name": "Byte: Product Recommender Quiz",
-            "url": "https://apps.shopify.com/byte",
+            "name": "Recomma: Product Quiz Builder",
+            "url": "https://apps.shopify.com/quiz-builder-3",
             "ad": false,
             "rank": 10
         },
@@ -91,14 +91,14 @@
             "rank": 11
         },
         {
-            "name": "POPSMASH: Fast AI Product Quiz",
-            "url": "https://apps.shopify.com/popsmash",
+            "name": "Fit Quiz: Size recommendation",
+            "url": "https://apps.shopify.com/fit-quiz",
             "ad": false,
             "rank": 12
         },
         {
-            "name": "Fit Quiz: Size recommendation",
-            "url": "https://apps.shopify.com/fit-quiz",
+            "name": "POPSMASH: Fast AI Product Quiz",
+            "url": "https://apps.shopify.com/popsmash",
             "ad": false,
             "rank": 13
         },
@@ -109,14 +109,14 @@
             "rank": 14
         },
         {
-            "name": "Appify: Power Quiz",
-            "url": "https://apps.shopify.com/power-quiz",
+            "name": "Shop Quiz: AI Recommendation",
+            "url": "https://apps.shopify.com/pickzen",
             "ad": false,
             "rank": 15
         },
         {
-            "name": "Shop Quiz: AI Recommendation",
-            "url": "https://apps.shopify.com/pickzen",
+            "name": "Appify: Power Quiz",
+            "url": "https://apps.shopify.com/power-quiz",
             "ad": false,
             "rank": 16
         },
@@ -127,20 +127,20 @@
             "rank": 17
         },
         {
-            "name": "ConvertFlow: Landing Pages",
-            "url": "https://apps.shopify.com/convertflow",
+            "name": "Prehook: Quiz Funnel Builder",
+            "url": "https://apps.shopify.com/quiz-funnel",
             "ad": false,
             "rank": 18
         },
         {
-            "name": "Neowauk \u2011 Survey, Quiz, Games",
-            "url": "https://apps.shopify.com/neowauk-events",
+            "name": "ConvertFlow: Landing Pages",
+            "url": "https://apps.shopify.com/convertflow",
             "ad": false,
             "rank": 19
         },
         {
-            "name": "Prehook: Quiz Funnel Builder",
-            "url": "https://apps.shopify.com/quiz-funnel",
+            "name": "QTA Quiz: Segment & Recommend",
+            "url": "https://apps.shopify.com/quiztoaction",
             "ad": false,
             "rank": 20
         },
@@ -151,28 +151,16 @@
             "rank": 21
         },
         {
-            "name": "Gobot \u2011 AI Chatbot + Quiz",
-            "url": "https://apps.shopify.com/gobot-1",
+            "name": "Neowauk \u2011 Survey, Quiz, Games",
+            "url": "https://apps.shopify.com/neowauk-events",
             "ad": false,
             "rank": 22
         },
         {
-            "name": "QTA Quiz: Segment & Recommend",
-            "url": "https://apps.shopify.com/quiztoaction",
+            "name": "Gobot \u2011 AI Chatbot + Quiz",
+            "url": "https://apps.shopify.com/gobot-1",
             "ad": false,
             "rank": 23
-        },
-        {
-            "name": "QTA Quiz: Segment & Recommend",
-            "url": "https://apps.shopify.com/quiztoaction",
-            "ad": true,
-            "rank": null
-        },
-        {
-            "name": "Dr Cart Shipping Rates & Rules",
-            "url": "https://apps.shopify.com/cart-shipping-calculator-pro",
-            "ad": true,
-            "rank": null
         },
         {
             "name": "Face Age AI Skin Analysis Quiz",
@@ -181,20 +169,32 @@
             "rank": null
         },
         {
-            "name": "Loox \u2011 Product Reviews App",
-            "url": "https://apps.shopify.com/loox",
+            "name": "Octane AI: Advanced Quiz Maker",
+            "url": "https://apps.shopify.com/octane-ai-quiz-personalization",
             "ad": true,
             "rank": null
         },
         {
-            "name": "Courses Plus",
-            "url": "https://apps.shopify.com/courses",
-            "ad": false,
-            "rank": 24
+            "name": "POPSMASH: Fast AI Product Quiz",
+            "url": "https://apps.shopify.com/popsmash",
+            "ad": true,
+            "rank": null
+        },
+        {
+            "name": "Veeform \u2011 Product Quiz Builder",
+            "url": "https://apps.shopify.com/veeform-product-quiz-builder",
+            "ad": true,
+            "rank": null
         },
         {
             "name": "Alia: Email & SMS Popups",
             "url": "https://apps.shopify.com/alia",
+            "ad": false,
+            "rank": 24
+        },
+        {
+            "name": "Courses Plus",
+            "url": "https://apps.shopify.com/courses",
             "ad": false,
             "rank": 25
         },
@@ -319,62 +319,62 @@
             "rank": 45
         },
         {
+            "name": "PaidQuiz",
+            "url": "https://apps.shopify.com/paidquiz",
+            "ad": false,
+            "rank": 46
+        },
+        {
             "name": "OptinMonster Email Popups",
             "url": "https://apps.shopify.com/optinmonster",
             "ad": false,
-            "rank": 46
+            "rank": 47
+        },
+        {
+            "name": "QTA Quiz: Segment & Recommend",
+            "url": "https://apps.shopify.com/quiztoaction",
+            "ad": true,
+            "rank": null
+        },
+        {
+            "name": "Customall Product Personalizer",
+            "url": "https://apps.shopify.com/customall",
+            "ad": true,
+            "rank": null
+        },
+        {
+            "name": "Face Age AI Skin Analysis Quiz",
+            "url": "https://apps.shopify.com/face-age",
+            "ad": true,
+            "rank": null
+        },
+        {
+            "name": "Glood Product Recommendations",
+            "url": "https://apps.shopify.com/recommendation-kit",
+            "ad": true,
+            "rank": null
         },
         {
             "name": "Live2.ai \u2011 Shoppable Videos",
             "url": "https://apps.shopify.com/live2ai",
             "ad": false,
-            "rank": 47
-        },
-        {
-            "name": "Beae Landing Page Builder",
-            "url": "https://apps.shopify.com/beae",
-            "ad": true,
-            "rank": null
-        },
-        {
-            "name": "Shopney \u2011 Mobile App Builder",
-            "url": "https://apps.shopify.com/shopney-mobile-app",
-            "ad": true,
-            "rank": null
-        },
-        {
-            "name": "Scarcity++ Low Stock Counter",
-            "url": "https://apps.shopify.com/almostgone-low-in-stock-alert",
-            "ad": true,
-            "rank": null
-        },
-        {
-            "name": "Rushy Scarcity Countdown Timer",
-            "url": "https://apps.shopify.com/scarcity-cart-countdown-timer",
-            "ad": true,
-            "rank": null
+            "rank": 48
         },
         {
             "name": "PurplePro\u2011Loyalty Rewards Quiz",
             "url": "https://apps.shopify.com/purplepro",
             "ad": false,
-            "rank": 48
-        },
-        {
-            "name": "PaidQuiz",
-            "url": "https://apps.shopify.com/paidquiz",
-            "ad": false,
             "rank": 49
         },
         {
-            "name": "CP24 Form Builder, File Upload",
-            "url": "https://apps.shopify.com/cp24-form-builder-contact",
+            "name": "Drip: Email Marketing & Popups",
+            "url": "https://apps.shopify.com/drip",
             "ad": false,
             "rank": 50
         },
         {
-            "name": "Quiz Buddy \u2011 Product Quiz",
-            "url": "https://apps.shopify.com/quiz-buddy",
+            "name": "CP24 Form Builder, File Upload",
+            "url": "https://apps.shopify.com/cp24-form-builder-contact",
             "ad": false,
             "rank": 51
         },
@@ -385,50 +385,50 @@
             "rank": 52
         },
         {
-            "name": "Tada Pop up Spin Wheel Popups",
-            "url": "https://apps.shopify.com/tada-pop-ups-game-emails",
+            "name": "Quiz Buddy \u2011 Product Quiz",
+            "url": "https://apps.shopify.com/quiz-buddy",
             "ad": false,
             "rank": 53
         },
         {
-            "name": "Drip: Email Marketing & Popups",
-            "url": "https://apps.shopify.com/drip",
+            "name": "Tada Pop up Spin Wheel Popups",
+            "url": "https://apps.shopify.com/tada-pop-ups-game-emails",
             "ad": false,
             "rank": 54
-        },
-        {
-            "name": "Apps Mav: Scratch and WIN!",
-            "url": "https://apps.shopify.com/scratch-win",
-            "ad": false,
-            "rank": 55
         },
         {
             "name": "EmailMagnet",
             "url": "https://apps.shopify.com/emagnet",
             "ad": false,
-            "rank": 56
+            "rank": 55
         },
         {
             "name": "Vairo: Sales Pop Up & Popups",
             "url": "https://apps.shopify.com/vairo",
             "ad": false,
-            "rank": 57
+            "rank": 56
         },
         {
-            "name": "SuperLeadz by XIRCLS",
-            "url": "https://apps.shopify.com/superleadz-by-xircls",
+            "name": "Apps Mav: Scratch and WIN!",
+            "url": "https://apps.shopify.com/scratch-win",
             "ad": false,
-            "rank": 58
+            "rank": 57
         },
         {
             "name": "Monk Mini Games",
             "url": "https://apps.shopify.com/influencerbit",
             "ad": false,
-            "rank": 59
+            "rank": 58
         },
         {
             "name": "Contact Form Ultimate",
             "url": "https://apps.shopify.com/contact-form-ultimate",
+            "ad": false,
+            "rank": 59
+        },
+        {
+            "name": "SuperLeadz by XIRCLS",
+            "url": "https://apps.shopify.com/superleadz-by-xircls",
             "ad": false,
             "rank": 60
         },
@@ -517,386 +517,99 @@
             "rank": 74
         }
     ],
+    "new_apps": [],
     "ranking_changes": [
         {
-            "name": "Octane AI: Advanced Quiz Maker",
-            "old_rank": 5,
-            "new_rank": null
-        },
-        {
-            "name": "Veeform \u2011 Product Quiz Builder",
-            "old_rank": 9,
-            "new_rank": null
-        },
-        {
-            "name": "Quizive: AI Quiz Builder",
-            "old_rank": 22,
-            "new_rank": null
-        },
-        {
-            "name": "POPSMASH: Fast AI Product Quiz",
-            "old_rank": 13,
-            "new_rank": null
-        },
-        {
             "name": "RevenueHunt: Recommender Quiz",
-            "old_rank": 2,
-            "new_rank": 1
+            "old_rank": 1,
+            "new_rank": null
         },
         {
             "name": "Quiz Kit: AI Product Finder",
-            "old_rank": 3,
-            "new_rank": 2
-        },
-        {
-            "name": "Lantern AI Quiz Builder",
-            "old_rank": 4,
-            "new_rank": 3
+            "old_rank": 2,
+            "new_rank": null
         },
         {
             "name": "Octane AI: Advanced Quiz Maker",
-            "old_rank": 5,
-            "new_rank": 4
-        },
-        {
-            "name": "Quizify \u2011 Product Quiz Builder",
-            "old_rank": 6,
-            "new_rank": 5
-        },
-        {
-            "name": "Tangent : Skin Quiz & Analysis",
-            "old_rank": 7,
-            "new_rank": 6
+            "old_rank": 4,
+            "new_rank": null
         },
         {
             "name": "Quizell AI Quiz & Form Builder",
-            "old_rank": 8,
-            "new_rank": 7
+            "old_rank": 7,
+            "new_rank": null
         },
         {
-            "name": "Veeform \u2011 Product Quiz Builder",
-            "old_rank": 9,
+            "name": "Byte: Product Recommender Quiz",
+            "old_rank": 10,
             "new_rank": 8
         },
         {
             "name": "Recomma: Product Quiz Builder",
-            "old_rank": 10,
-            "new_rank": 9
-        },
-        {
-            "name": "Byte: Product Recommender Quiz",
-            "old_rank": 11,
+            "old_rank": 9,
             "new_rank": 10
         },
         {
-            "name": "VQB: AI Product Quiz Builder",
-            "old_rank": 12,
-            "new_rank": 11
+            "name": "Octane AI: Advanced Quiz Maker",
+            "old_rank": 4,
+            "new_rank": null
         },
         {
-            "name": "POPSMASH: Fast AI Product Quiz",
-            "old_rank": 13,
-            "new_rank": 12
-        },
-        {
-            "name": "Fit Quiz: Size recommendation",
-            "old_rank": 14,
-            "new_rank": 13
-        },
-        {
-            "name": "Appify: Power Quiz",
-            "old_rank": 16,
-            "new_rank": 15
-        },
-        {
-            "name": "Shop Quiz: AI Recommendation",
-            "old_rank": 17,
-            "new_rank": 16
-        },
-        {
-            "name": "Askflow AI \u2011 Product Quiz App",
-            "old_rank": 18,
-            "new_rank": 17
-        },
-        {
-            "name": "ConvertFlow: Landing Pages",
-            "old_rank": 19,
-            "new_rank": 18
-        },
-        {
-            "name": "Neowauk \u2011 Survey, Quiz, Games",
-            "old_rank": 20,
-            "new_rank": 19
-        },
-        {
-            "name": "Prehook: Quiz Funnel Builder",
-            "old_rank": 21,
-            "new_rank": 20
-        },
-        {
-            "name": "Quizive: AI Quiz Builder",
-            "old_rank": 22,
-            "new_rank": 21
-        },
-        {
-            "name": "Gobot \u2011 AI Chatbot + Quiz",
-            "old_rank": 23,
-            "new_rank": 22
-        },
-        {
-            "name": "Courses Plus",
-            "old_rank": 25,
-            "new_rank": 24
-        },
-        {
-            "name": "Alia: Email & SMS Popups",
-            "old_rank": 26,
-            "new_rank": 25
-        },
-        {
-            "name": "TZ Trust Badges, Sales Pop Up",
-            "old_rank": 27,
-            "new_rank": 26
-        },
-        {
-            "name": "QuizShop \u2011 Recommender Quiz",
-            "old_rank": 28,
-            "new_rank": 27
-        },
-        {
-            "name": "Videowise Shoppable Videos UGC",
-            "old_rank": 29,
-            "new_rank": 28
-        },
-        {
-            "name": "Spin Wheel Email Popups \u2022 EA",
-            "old_rank": 30,
-            "new_rank": 29
-        },
-        {
-            "name": "Snackeet | Webstory & Quiz",
-            "old_rank": 31,
-            "new_rank": 30
-        },
-        {
-            "name": "OptiMonk: Popup, CRO, A/B Test",
-            "old_rank": 32,
-            "new_rank": 31
-        },
-        {
-            "name": "Fyrebox Quizzes",
-            "old_rank": 33,
-            "new_rank": 32
-        },
-        {
-            "name": "GSC Email marketing, Pop ups",
-            "old_rank": 34,
-            "new_rank": 33
-        },
-        {
-            "name": "Wiser Product Recommendations",
-            "old_rank": 35,
-            "new_rank": 34
-        },
-        {
-            "name": "G:Spin Wheel+Gamification+Game",
-            "old_rank": 36,
-            "new_rank": 35
-        },
-        {
-            "name": "Poptin \u2011 Exit & Email Pop Ups",
-            "old_rank": 37,
-            "new_rank": 36
-        },
-        {
-            "name": "Jebbit: Quizzes That Convert",
-            "old_rank": 38,
-            "new_rank": 37
-        },
-        {
-            "name": "Manifest AI Chatbot + ChatGPT",
-            "old_rank": 39,
-            "new_rank": 38
-        },
-        {
-            "name": "Optinger \u2011 Sale & Email Pop Up",
-            "old_rank": 40,
-            "new_rank": 39
-        },
-        {
-            "name": "AppsMav: Social Boost",
-            "old_rank": 41,
-            "new_rank": 40
-        },
-        {
-            "name": "Wisepops: Popups & Notif 2024",
-            "old_rank": 42,
-            "new_rank": 41
-        },
-        {
-            "name": "EM Product Recommendation Quiz",
-            "old_rank": 43,
-            "new_rank": 42
-        },
-        {
-            "name": "Gojiberry Survey & Feedback",
-            "old_rank": 44,
-            "new_rank": 43
-        },
-        {
-            "name": "Smartarget Quiz Popup",
-            "old_rank": 45,
-            "new_rank": 44
-        },
-        {
-            "name": "Justuno \u2011 Email & SMS Pop ups",
-            "old_rank": 46,
-            "new_rank": 45
-        },
-        {
-            "name": "OptinMonster Email Popups",
-            "old_rank": 47,
-            "new_rank": 46
-        },
-        {
-            "name": "Live2.ai \u2011 Shoppable Videos",
-            "old_rank": 48,
-            "new_rank": 47
-        },
-        {
-            "name": "PurplePro\u2011Loyalty Rewards Quiz",
-            "old_rank": 49,
-            "new_rank": 48
-        },
-        {
-            "name": "PaidQuiz",
-            "old_rank": 50,
-            "new_rank": 49
-        },
-        {
-            "name": "CP24 Form Builder, File Upload",
-            "old_rank": 51,
+            "name": "Drip: Email Marketing & Popups",
+            "old_rank": 54,
             "new_rank": 50
         },
         {
-            "name": "Quiz Buddy \u2011 Product Quiz",
-            "old_rank": 52,
+            "name": "CP24 Form Builder, File Upload",
+            "old_rank": 50,
             "new_rank": 51
         },
         {
             "name": "Rend \u2011 Custom AI Product Quiz",
-            "old_rank": 53,
+            "old_rank": 51,
             "new_rank": 52
         },
         {
-            "name": "Tada Pop up Spin Wheel Popups",
-            "old_rank": 54,
+            "name": "Quiz Buddy \u2011 Product Quiz",
+            "old_rank": 52,
             "new_rank": 53
         },
         {
-            "name": "Drip: Email Marketing & Popups",
-            "old_rank": 55,
+            "name": "Tada Pop up Spin Wheel Popups",
+            "old_rank": 53,
             "new_rank": 54
+        }
+    ],
+    "top_5": [
+        {
+            "name": "RevenueHunt: Recommender Quiz",
+            "url": "https://apps.shopify.com/product-recommendation-quiz-revenuehunt",
+            "ad": false,
+            "rank": 1
         },
         {
-            "name": "Apps Mav: Scratch and WIN!",
-            "old_rank": 56,
-            "new_rank": 55
+            "name": "Quiz Kit: AI Product Finder",
+            "url": "https://apps.shopify.com/quiz-kit",
+            "ad": false,
+            "rank": 2
         },
         {
-            "name": "EmailMagnet",
-            "old_rank": 57,
-            "new_rank": 56
+            "name": "Lantern AI Quiz Builder",
+            "url": "https://apps.shopify.com/perfect-product-finder",
+            "ad": false,
+            "rank": 3
         },
         {
-            "name": "Vairo: Sales Pop Up & Popups",
-            "old_rank": 58,
-            "new_rank": 57
+            "name": "Octane AI: Advanced Quiz Maker",
+            "url": "https://apps.shopify.com/octane-ai-quiz-personalization",
+            "ad": false,
+            "rank": 4
         },
         {
-            "name": "SuperLeadz by XIRCLS",
-            "old_rank": 59,
-            "new_rank": 58
-        },
-        {
-            "name": "Monk Mini Games",
-            "old_rank": 60,
-            "new_rank": 59
-        },
-        {
-            "name": "Contact Form Ultimate",
-            "old_rank": 61,
-            "new_rank": 60
-        },
-        {
-            "name": "Popup Maker Exit Intent Popups",
-            "old_rank": 62,
-            "new_rank": 61
-        },
-        {
-            "name": "Youps: Gamified Email Popups",
-            "old_rank": 63,
-            "new_rank": 62
-        },
-        {
-            "name": "Odicci: Games and Rewards",
-            "old_rank": 64,
-            "new_rank": 63
-        },
-        {
-            "name": "QuickQuiz \u2011 More Submissions",
-            "old_rank": 65,
-            "new_rank": 64
-        },
-        {
-            "name": "Traxoft: Image Voting",
-            "old_rank": 66,
-            "new_rank": 65
-        },
-        {
-            "name": "Irin AI Chatbot WhatsApp Tool",
-            "old_rank": 67,
-            "new_rank": 66
-        },
-        {
-            "name": "Formulary \u2011 AI Skin Analysis",
-            "old_rank": 68,
-            "new_rank": 67
-        },
-        {
-            "name": "QuizMaster\u2011Product Recommender",
-            "old_rank": 69,
-            "new_rank": 68
-        },
-        {
-            "name": "FieldsRaven",
-            "old_rank": 70,
-            "new_rank": 69
-        },
-        {
-            "name": "ESTS PopupPro",
-            "old_rank": 71,
-            "new_rank": 70
-        },
-        {
-            "name": "Meja \u2011 Product Recommender",
-            "old_rank": 72,
-            "new_rank": 71
-        },
-        {
-            "name": "Okendo: Reviews & Loyalty",
-            "old_rank": 73,
-            "new_rank": 72
-        },
-        {
-            "name": "Tip Quik | Tip Pop\u2011up in Cart",
-            "old_rank": 74,
-            "new_rank": 73
-        },
-        {
-            "name": "Quik \u2011 Quick / Bulk Order Page",
-            "old_rank": 75,
-            "new_rank": 74
+            "name": "Quizify \u2011 Product Quiz Builder",
+            "url": "https://apps.shopify.com/quizify-product-quiz-feedback",
+            "ad": false,
+            "rank": 5
         }
     ]
 }
