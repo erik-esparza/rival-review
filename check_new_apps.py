@@ -73,7 +73,11 @@ def fetch_apps():
                 link = link_element.get_attribute("href")
                 title = link_element.text.strip()
                 clean_link = clean_url(link)
+                # Detect if the app is an ad
                 is_ad = bool(card.find_elements(By.CSS_SELECTOR, "[data-controller='popover-modal']"))
+                # Detect if the app has the "Built for Shopify" badge
+                is_bfs = bool(card.find_elements(By.CSS_SELECTOR, ".built-for-shopify-badge"))
+
                 
                 if not title or not clean_link:
                     continue
@@ -92,7 +96,14 @@ def fetch_apps():
                     seen_organic.add(clean_link)
                     rank += 1  # Only increment rank for organic apps
                 
-                app_entry = {"name": title, "url": clean_link, "ad": is_ad, "rank": None if is_ad else rank}
+                app_entry = {
+                "name": title,
+                "url": clean_link,
+                "ad": is_ad,
+                "bfs": is_bfs,  # New BFS key
+                "rank": None if is_ad else rank
+                }
+                
                 valid_apps.append(app_entry)
             
             except Exception as e:
@@ -146,20 +157,20 @@ def save_all_data_to_csv(filename, app_data):
 
         # Write section: All Apps
         writer.writerow(["[All Apps]"])
-        writer.writerow(["name", "url", "ad", "rank"])
-        writer.writerows([[app["name"], app["url"], app["ad"], app["rank"]] for app in app_data["all_apps"]])
+        writer.writerow(["name", "url", "ad", "bfs", "rank"])
+        writer.writerows([[app["name"], app["url"], app["ad"], app["bfs"], app["rank"]] for app in app_data["all_apps"]])
         writer.writerow([])  # Blank line for separation
 
         # Write section: New Apps
         writer.writerow(["[New Apps]"])
-        writer.writerow(["name", "url", "ad", "rank"])
-        writer.writerows([[app["name"], app["url"], app["ad"], app["rank"]] for app in app_data["new_apps"]])
+        writer.writerow(["name", "url", "ad", "bfs", "rank"])
+        writer.writerows([[app["name"], app["url"], app["ad"], app["bfs"], app["rank"]] for app in app_data["new_apps"]])
         writer.writerow([])
 
         # Write section: Top 5
         writer.writerow(["[Top 5]"])
-        writer.writerow(["name", "url", "ad", "rank"])
-        writer.writerows([[app["name"], app["url"], app["ad"], app["rank"]] for app in app_data["top_5"]])
+        writer.writerow(["name", "url", "ad", "bfs", "rank"])
+        writer.writerows([[app["name"], app["url"], app["ad"], app["bfs"], app["rank"]] for app in app_data["top_5"]])
 
     print(f"✅ CSV saved: {filepath}")
 
