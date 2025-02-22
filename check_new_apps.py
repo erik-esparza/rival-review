@@ -147,6 +147,18 @@ def save_current_apps(data):
     with open(DATA_FILE, "w") as f:
         json.dump(data, f, indent=4)
 
+def save_top5_links():
+    """Save Top 5 app review links separately."""
+    past_data = load_past_apps()
+    top_5 = [app for app in past_data.get("top_5", [])]
+
+    # Save only the review URLs
+    with open("data/top_5_links.json", "w") as f:
+        json.dump([app["url"] + "/reviews?sort_by=newest" for app in top_5], f, indent=4)
+
+    print("✅ Saved Top 5 review links.")
+
+
 def save_all_data_to_csv(filename, app_data):
     """Save all app data into a single CSV file with section headers."""
     os.makedirs(CSV_FOLDER, exist_ok=True)
@@ -201,6 +213,7 @@ def compare_apps():
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     csv_filename = f"apps_data_{timestamp}.csv"
     save_all_data_to_csv(csv_filename, output)  # Use unique filename
+    save_top5_links()  # Save review links separately
 
 if __name__ == "__main__":
     compare_apps()
