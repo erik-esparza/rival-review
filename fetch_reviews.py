@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from datetime import datetime
 import json
 import os
 import time
@@ -48,19 +49,25 @@ def fetch_reviews(app_url):
     return reviews
 
 def save_reviews_to_csv(reviews):
-    """Save reviews to a CSV file."""
+    """Append review data to a historical CSV file."""
     os.makedirs(CSV_FOLDER, exist_ok=True)
-    timestamp = time.strftime("%Y-%m-%d_%H-%M-%S")
-    filepath = os.path.join(CSV_FOLDER, f"reviews_{timestamp}.csv")
+    filepath = os.path.join(CSV_FOLDER, "historical_reviews.csv")
 
-    with open(filepath, "w", newline="") as f:
+    file_exists = os.path.isfile(filepath)
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    with open(filepath, "a", newline="") as f:
         writer = csv.writer(f)
-        writer.writerow(["app_url", "rating", "date", "content"])
+
+        if not file_exists:
+            writer.writerow(["date_collected", "app_url", "rating", "date", "content"])
+
         for app_url, review_list in reviews.items():
             for review in review_list:
-                writer.writerow([app_url, review["rating"], review["date"], review["content"]])
+                writer.writerow([timestamp, app_url, review["rating"], review["date"], review["content"]])
 
-    print(f"✅ Reviews saved: {filepath}")
+    print(f"✅ Historical Reviews CSV updated: {filepath}")
+
 
 def main():
     """Load Top 5 apps and fetch their reviews."""

@@ -170,21 +170,46 @@ def save_all_data_to_csv(filename, app_data):
         # Write section: All Apps
         writer.writerow(["[All Apps]"])
         writer.writerow(["name", "url", "ad", "bfs", "rank"])
-        writer.writerows([[app["name"], app["url"], app["ad"], app["bfs"], app["rank"]] for app in app_data["all_apps"]])
+        for app in app_data["all_apps"]:
+            writer.writerow([app["name"], app["url"], app["ad"], app["bfs"], app["rank"]])
         writer.writerow([])  # Blank line for separation
 
-        # Write section: New Apps
+        # Write section: New Apps (ONLY FROM LAST RUN)
         writer.writerow(["[New Apps]"])
         writer.writerow(["name", "url", "ad", "bfs", "rank"])
-        writer.writerows([[app["name"], app["url"], app["ad"], app["bfs"], app["rank"]] for app in app_data["new_apps"]])
-        writer.writerow([])
+        for app in app_data["new_apps"]:
+            writer.writerow([app["name"], app["url"], app["ad"], app["bfs"], app["rank"]])
+        writer.writerow([])  # Blank line for separation
 
-        # Write section: Top 5
+        # Write section: Top 5 (NO AD APPS)
         writer.writerow(["[Top 5]"])
         writer.writerow(["name", "url", "ad", "bfs", "rank"])
-        writer.writerows([[app["name"], app["url"], app["ad"], app["bfs"], app["rank"]] for app in app_data["top_5"]])
+        for app in app_data["top_5"]:
+            writer.writerow([app["name"], app["url"], app["ad"], app["bfs"], app["rank"]])
 
     print(f"✅ CSV saved: {filepath}")
+
+def save_to_historical_apps_csv(filename, app_data):
+    """Append the latest app ranking data to a historical CSV file."""
+    os.makedirs(CSV_FOLDER, exist_ok=True)
+    filepath = os.path.join(CSV_FOLDER, filename)
+    file_exists = os.path.isfile(filepath)
+
+    with open(filepath, "a", newline="") as f:
+        writer = csv.writer(f)
+
+        # If the file is new, add a header
+        if not file_exists:
+            writer.writerow(["date", "name", "url", "ad", "bfs", "rank"])
+
+        # Append new run's data
+        date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        writer.writerows([
+            [date, app["name"], app["url"], app["ad"], app["bfs"], app["rank"]]
+            for app in app_data["all_apps"]
+        ])
+
+    print(f"📜 Historical Apps CSV updated: {filepath}")
 
 
 def compare_apps():
@@ -213,7 +238,7 @@ def compare_apps():
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     csv_filename = f"apps_data_{timestamp}.csv"
     save_all_data_to_csv(csv_filename, output)  # Use unique filename
-    save_top5_links()  # Save review links separately
+    save_to_historical_apps_csv("historical_apps.csv", output)  # Save historical data
 
 if __name__ == "__main__":
     compare_apps()
