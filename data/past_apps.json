@@ -15,10 +15,10 @@
             "rank": null
         },
         {
-            "name": "Lantern AI Quiz Builder",
-            "url": "https://apps.shopify.com/perfect-product-finder",
+            "name": "Veeform \u2011 Product Quiz Builder",
+            "url": "https://apps.shopify.com/veeform-product-quiz-builder",
             "ad": true,
-            "bfs": true,
+            "bfs": false,
             "rank": null
         },
         {
@@ -155,15 +155,15 @@
             "rank": 18
         },
         {
-            "name": "Gobot \u2011 AI Chatbot + Quiz",
-            "url": "https://apps.shopify.com/gobot-1",
+            "name": "Neowauk \u2011 Survey, Quiz, Games",
+            "url": "https://apps.shopify.com/neowauk-events",
             "ad": false,
             "bfs": false,
             "rank": 19
         },
         {
-            "name": "Neowauk \u2011 Survey, Quiz, Games",
-            "url": "https://apps.shopify.com/neowauk-events",
+            "name": "Gobot \u2011 AI Chatbot + Quiz",
+            "url": "https://apps.shopify.com/gobot-1",
             "ad": false,
             "bfs": false,
             "rank": 20
@@ -176,29 +176,29 @@
             "rank": 21
         },
         {
-            "name": "QTA Quiz: Segment & Recommend",
-            "url": "https://apps.shopify.com/quiztoaction",
+            "name": "Quizive: AI Quiz Builder",
+            "url": "https://apps.shopify.com/quizive-app",
             "ad": false,
             "bfs": false,
             "rank": 22
         },
         {
-            "name": "Quizive: AI Quiz Builder",
-            "url": "https://apps.shopify.com/quizive-app",
+            "name": "QTA Quiz: Segment & Recommend",
+            "url": "https://apps.shopify.com/quiztoaction",
             "ad": false,
             "bfs": false,
             "rank": 23
         },
         {
-            "name": "Shopney \u2011 Mobile App Builder",
-            "url": "https://apps.shopify.com/shopney-mobile-app",
-            "ad": true,
-            "bfs": false,
-            "rank": null
+            "name": "Courses Plus",
+            "url": "https://apps.shopify.com/courses",
+            "ad": false,
+            "bfs": true,
+            "rank": 24
         },
         {
-            "name": "QuizShop \u2011 Recommender Quiz",
-            "url": "https://apps.shopify.com/questionify",
+            "name": "Shopney \u2011 Mobile App Builder",
+            "url": "https://apps.shopify.com/shopney-mobile-app",
             "ad": true,
             "bfs": false,
             "rank": null
@@ -211,18 +211,18 @@
             "rank": null
         },
         {
-            "name": "Glood Product Recommendations",
-            "url": "https://apps.shopify.com/recommendation-kit",
+            "name": "Loox \u2011 Product Reviews App",
+            "url": "https://apps.shopify.com/loox",
             "ad": true,
-            "bfs": false,
+            "bfs": true,
             "rank": null
         },
         {
-            "name": "Courses Plus",
-            "url": "https://apps.shopify.com/courses",
-            "ad": false,
-            "bfs": true,
-            "rank": 24
+            "name": "Face Age AI Skin Analysis Quiz",
+            "url": "https://apps.shopify.com/face-age",
+            "ad": true,
+            "bfs": false,
+            "rank": null
         },
         {
             "name": "Alia: Email & SMS Popups",
@@ -232,15 +232,15 @@
             "rank": 25
         },
         {
-            "name": "QuizShop \u2011 Recommender Quiz",
-            "url": "https://apps.shopify.com/questionify",
+            "name": "TZ Trust Badges, Sales Pop Up",
+            "url": "https://apps.shopify.com/trustz",
             "ad": false,
             "bfs": false,
             "rank": 26
         },
         {
-            "name": "TZ Trust Badges, Sales Pop Up",
-            "url": "https://apps.shopify.com/trustz",
+            "name": "QuizShop \u2011 Recommender Quiz",
+            "url": "https://apps.shopify.com/questionify",
             "ad": false,
             "bfs": false,
             "rank": 27
@@ -274,15 +274,15 @@
             "rank": 31
         },
         {
-            "name": "Wiser Product Recommendations",
-            "url": "https://apps.shopify.com/recommended-products-wiser",
+            "name": "GSC Email marketing, Pop ups",
+            "url": "https://apps.shopify.com/getsitecontrol",
             "ad": false,
             "bfs": false,
             "rank": 32
         },
         {
-            "name": "GSC Email marketing, Pop ups",
-            "url": "https://apps.shopify.com/getsitecontrol",
+            "name": "Wiser Product Recommendations",
+            "url": "https://apps.shopify.com/recommended-products-wiser",
             "ad": false,
             "bfs": false,
             "rank": 33
@@ -302,29 +302,29 @@
             "rank": 35
         },
         {
-            "name": "G:Spin Wheel+Gamification+Game",
-            "url": "https://apps.shopify.com/ga-spin",
+            "name": "Fyrebox Quizzes",
+            "url": "https://apps.shopify.com/fyrebox-games-and-quizzes",
             "ad": false,
             "bfs": false,
             "rank": 36
         },
         {
-            "name": "Fyrebox Quizzes",
-            "url": "https://apps.shopify.com/fyrebox-games-and-quizzes",
+            "name": "G:Spin Wheel+Gamification+Game",
+            "url": "https://apps.shopify.com/ga-spin",
             "ad": false,
             "bfs": false,
             "rank": 37
         },
         {
-            "name": "Manifest AI Chatbot + ChatGPT",
-            "url": "https://apps.shopify.com/manifest-ai-shopping-assistant",
+            "name": "Optinger \u2011 Sale & Email Pop Up",
+            "url": "https://apps.shopify.com/optinger",
             "ad": false,
             "bfs": false,
             "rank": 38
         },
         {
-            "name": "Optinger \u2011 Sale & Email Pop Up",
-            "url": "https://apps.shopify.com/optinger",
+            "name": "Manifest AI Chatbot + ChatGPT",
+            "url": "https://apps.shopify.com/manifest-ai-shopping-assistant",
             "ad": false,
             "bfs": false,
             "rank": 39
@@ -337,15 +337,15 @@
             "rank": 40
         },
         {
-            "name": "Wisepops: Popups & Notif 2024",
-            "url": "https://apps.shopify.com/pop-up-builder-wisepops",
+            "name": "AppsMav: Social Boost",
+            "url": "https://apps.shopify.com/social-boost",
             "ad": false,
             "bfs": false,
             "rank": 41
         },
         {
-            "name": "AppsMav: Social Boost",
-            "url": "https://apps.shopify.com/social-boost",
+            "name": "Wisepops: Popups & Notif 2025",
+            "url": "https://apps.shopify.com/pop-up-builder-wisepops",
             "ad": false,
             "bfs": false,
             "rank": 42
@@ -372,29 +372,36 @@
             "rank": 45
         },
         {
-            "name": "PurplePro\u2011Loyalty Rewards Quiz",
-            "url": "https://apps.shopify.com/purplepro",
+            "name": "Live2.ai \u2011 Shoppable Videos",
+            "url": "https://apps.shopify.com/live2ai",
             "ad": false,
             "bfs": false,
             "rank": 46
         },
         {
-            "name": "Live2.ai \u2011 Shoppable Videos",
-            "url": "https://apps.shopify.com/live2ai",
+            "name": "PurplePro\u2011Loyalty Rewards Quiz",
+            "url": "https://apps.shopify.com/purplepro",
             "ad": false,
             "bfs": false,
             "rank": 47
         },
         {
-            "name": "Socialwidget \u2011 Instagram Feed",
-            "url": "https://apps.shopify.com/instafeed-socialwidget",
+            "name": "Beae Landing Page Builder",
+            "url": "https://apps.shopify.com/beae",
             "ad": true,
             "bfs": true,
             "rank": null
         },
         {
-            "name": "Face Age AI Skin Analysis Quiz",
-            "url": "https://apps.shopify.com/face-age",
+            "name": "Appify: Power Quiz",
+            "url": "https://apps.shopify.com/power-quiz",
+            "ad": true,
+            "bfs": false,
+            "rank": null
+        },
+        {
+            "name": "Glood Product Recommendations",
+            "url": "https://apps.shopify.com/recommendation-kit",
             "ad": true,
             "bfs": false,
             "rank": null
@@ -407,29 +414,22 @@
             "rank": null
         },
         {
-            "name": "Tolstoy Shoppable Video & UGC",
-            "url": "https://apps.shopify.com/tolstoy",
-            "ad": true,
-            "bfs": false,
-            "rank": null
-        },
-        {
-            "name": "OptinMonster Email Popups",
-            "url": "https://apps.shopify.com/optinmonster",
+            "name": "Rend \u2011 Custom AI Product Quiz",
+            "url": "https://apps.shopify.com/rend-quiz",
             "ad": false,
             "bfs": false,
             "rank": 48
         },
         {
-            "name": "Rend \u2011 Custom AI Product Quiz",
-            "url": "https://apps.shopify.com/rend-quiz",
+            "name": "Quiz Buddy \u2011 Product Quiz",
+            "url": "https://apps.shopify.com/quiz-buddy",
             "ad": false,
             "bfs": false,
             "rank": 49
         },
         {
-            "name": "Quiz Buddy \u2011 Product Quiz",
-            "url": "https://apps.shopify.com/quiz-buddy",
+            "name": "OptinMonster Email Popups",
+            "url": "https://apps.shopify.com/optinmonster",
             "ad": false,
             "bfs": false,
             "rank": 50
@@ -442,71 +442,71 @@
             "rank": 51
         },
         {
-            "name": "Vairo: Sales Pop Up & Popups",
-            "url": "https://apps.shopify.com/vairo",
+            "name": "Drip: Email Marketing & Popups",
+            "url": "https://apps.shopify.com/drip",
             "ad": false,
             "bfs": false,
             "rank": 52
         },
         {
-            "name": "Drip: Email Marketing & Popups",
-            "url": "https://apps.shopify.com/drip",
+            "name": "QuickQuiz \u2011 More Submissions",
+            "url": "https://apps.shopify.com/one-line-quiz",
             "ad": false,
             "bfs": false,
             "rank": 53
+        },
+        {
+            "name": "Vairo: Sales Pop Up & Popups",
+            "url": "https://apps.shopify.com/vairo",
+            "ad": false,
+            "bfs": false,
+            "rank": 54
         },
         {
             "name": "CP24 Form Builder, File Upload",
             "url": "https://apps.shopify.com/cp24-form-builder-contact",
             "ad": false,
             "bfs": false,
-            "rank": 54
+            "rank": 55
         },
         {
             "name": "PaidQuiz",
             "url": "https://apps.shopify.com/paidquiz",
             "ad": false,
             "bfs": false,
-            "rank": 55
+            "rank": 56
         },
         {
             "name": "EmailMagnet: Email & SMS Popup",
             "url": "https://apps.shopify.com/emagnet",
             "ad": false,
             "bfs": false,
-            "rank": 56
+            "rank": 57
         },
         {
             "name": "Apps Mav: Scratch and WIN!",
             "url": "https://apps.shopify.com/scratch-win",
             "ad": false,
             "bfs": false,
-            "rank": 57
+            "rank": 58
         },
         {
             "name": "Monk Mini Games",
             "url": "https://apps.shopify.com/influencerbit",
             "ad": false,
             "bfs": false,
-            "rank": 58
+            "rank": 59
         },
         {
             "name": "Contact Form Ultimate",
             "url": "https://apps.shopify.com/contact-form-ultimate",
             "ad": false,
             "bfs": false,
-            "rank": 59
-        },
-        {
-            "name": "Youps: Gamified Email Popups",
-            "url": "https://apps.shopify.com/youps",
-            "ad": false,
-            "bfs": false,
             "rank": 60
         },
         {
-            "name": "QuickQuiz \u2011 More Submissions",
-            "url": "https://apps.shopify.com/one-line-quiz",
+            "name": "Odicci: Games and Rewards",
+            "url": "https://apps.shopify.com/odicci",
             "ad": false,
             "bfs": false,
             "rank": 61
@@ -519,22 +519,22 @@
             "rank": 62
         },
         {
-            "name": "Odicci: Games and Rewards",
-            "url": "https://apps.shopify.com/odicci",
+            "name": "Irin AI Chatbot WhatsApp Tool",
+            "url": "https://apps.shopify.com/irin",
             "ad": false,
             "bfs": false,
             "rank": 63
         },
         {
-            "name": "Irin AI Chatbot WhatsApp Tool",
-            "url": "https://apps.shopify.com/irin",
+            "name": "Traxoft: Image Voting",
+            "url": "https://apps.shopify.com/traxoft-image-voting-kit",
             "ad": false,
             "bfs": false,
             "rank": 64
         },
         {
-            "name": "Traxoft: Image Voting",
-            "url": "https://apps.shopify.com/traxoft-image-voting-kit",
+            "name": "Youps: Gamified Email Popups",
+            "url": "https://apps.shopify.com/youps",
             "ad": false,
             "bfs": false,
             "rank": 65
@@ -596,21 +596,57 @@
             "rank": 73
         },
         {
+            "name": "Function Junction",
+            "url": "https://apps.shopify.com/functions-app",
+            "ad": false,
+            "bfs": false,
+            "rank": 74
+        },
+        {
             "name": "Tip Quik | Tip Pop\u2011up in Cart",
             "url": "https://apps.shopify.com/tip-quik-1",
             "ad": false,
             "bfs": false,
-            "rank": 74
+            "rank": 75
         },
         {
             "name": "Quik \u2011 Quick / Bulk Order Page",
             "url": "https://apps.shopify.com/quik-quick-order-page",
             "ad": false,
             "bfs": false,
-            "rank": 75
+            "rank": 76
         }
     ],
-    "new_apps": [],
+    "new_apps": [
+        {
+            "name": "Loox \u2011 Product Reviews App",
+            "url": "https://apps.shopify.com/loox",
+            "ad": true,
+            "bfs": true,
+            "rank": null
+        },
+        {
+            "name": "Wisepops: Popups & Notif 2025",
+            "url": "https://apps.shopify.com/pop-up-builder-wisepops",
+            "ad": false,
+            "bfs": false,
+            "rank": 42
+        },
+        {
+            "name": "Beae Landing Page Builder",
+            "url": "https://apps.shopify.com/beae",
+            "ad": true,
+            "bfs": true,
+            "rank": null
+        },
+        {
+            "name": "Function Junction",
+            "url": "https://apps.shopify.com/functions-app",
+            "ad": false,
+            "bfs": false,
+            "rank": 74
+        }
+    ],
     "ranking_changes": [
         {
             "name": "Octane AI: Advanced Quiz Maker",
@@ -623,8 +659,8 @@
             "new_rank": null
         },
         {
-            "name": "Lantern AI Quiz Builder",
-            "old_rank": 3,
+            "name": "Veeform \u2011 Product Quiz Builder",
+            "old_rank": 9,
             "new_rank": null
         },
         {
@@ -633,9 +669,174 @@
             "new_rank": null
         },
         {
+            "name": "Neowauk \u2011 Survey, Quiz, Games",
+            "old_rank": 20,
+            "new_rank": 19
+        },
+        {
+            "name": "Gobot \u2011 AI Chatbot + Quiz",
+            "old_rank": 19,
+            "new_rank": 20
+        },
+        {
+            "name": "Quizive: AI Quiz Builder",
+            "old_rank": 23,
+            "new_rank": 22
+        },
+        {
+            "name": "QTA Quiz: Segment & Recommend",
+            "old_rank": 22,
+            "new_rank": 23
+        },
+        {
+            "name": "TZ Trust Badges, Sales Pop Up",
+            "old_rank": 27,
+            "new_rank": 26
+        },
+        {
             "name": "QuizShop \u2011 Recommender Quiz",
             "old_rank": 26,
+            "new_rank": 27
+        },
+        {
+            "name": "GSC Email marketing, Pop ups",
+            "old_rank": 33,
+            "new_rank": 32
+        },
+        {
+            "name": "Wiser Product Recommendations",
+            "old_rank": 32,
+            "new_rank": 33
+        },
+        {
+            "name": "Fyrebox Quizzes",
+            "old_rank": 37,
+            "new_rank": 36
+        },
+        {
+            "name": "G:Spin Wheel+Gamification+Game",
+            "old_rank": 36,
+            "new_rank": 37
+        },
+        {
+            "name": "Optinger \u2011 Sale & Email Pop Up",
+            "old_rank": 39,
+            "new_rank": 38
+        },
+        {
+            "name": "Manifest AI Chatbot + ChatGPT",
+            "old_rank": 38,
+            "new_rank": 39
+        },
+        {
+            "name": "AppsMav: Social Boost",
+            "old_rank": 42,
+            "new_rank": 41
+        },
+        {
+            "name": "Live2.ai \u2011 Shoppable Videos",
+            "old_rank": 47,
+            "new_rank": 46
+        },
+        {
+            "name": "PurplePro\u2011Loyalty Rewards Quiz",
+            "old_rank": 46,
+            "new_rank": 47
+        },
+        {
+            "name": "Appify: Power Quiz",
+            "old_rank": 16,
             "new_rank": null
+        },
+        {
+            "name": "Rend \u2011 Custom AI Product Quiz",
+            "old_rank": 49,
+            "new_rank": 48
+        },
+        {
+            "name": "Quiz Buddy \u2011 Product Quiz",
+            "old_rank": 50,
+            "new_rank": 49
+        },
+        {
+            "name": "OptinMonster Email Popups",
+            "old_rank": 48,
+            "new_rank": 50
+        },
+        {
+            "name": "Drip: Email Marketing & Popups",
+            "old_rank": 53,
+            "new_rank": 52
+        },
+        {
+            "name": "QuickQuiz \u2011 More Submissions",
+            "old_rank": 61,
+            "new_rank": 53
+        },
+        {
+            "name": "Vairo: Sales Pop Up & Popups",
+            "old_rank": 52,
+            "new_rank": 54
+        },
+        {
+            "name": "CP24 Form Builder, File Upload",
+            "old_rank": 54,
+            "new_rank": 55
+        },
+        {
+            "name": "PaidQuiz",
+            "old_rank": 55,
+            "new_rank": 56
+        },
+        {
+            "name": "EmailMagnet: Email & SMS Popup",
+            "old_rank": 56,
+            "new_rank": 57
+        },
+        {
+            "name": "Apps Mav: Scratch and WIN!",
+            "old_rank": 57,
+            "new_rank": 58
+        },
+        {
+            "name": "Monk Mini Games",
+            "old_rank": 58,
+            "new_rank": 59
+        },
+        {
+            "name": "Contact Form Ultimate",
+            "old_rank": 59,
+            "new_rank": 60
+        },
+        {
+            "name": "Odicci: Games and Rewards",
+            "old_rank": 63,
+            "new_rank": 61
+        },
+        {
+            "name": "Irin AI Chatbot WhatsApp Tool",
+            "old_rank": 64,
+            "new_rank": 63
+        },
+        {
+            "name": "Traxoft: Image Voting",
+            "old_rank": 65,
+            "new_rank": 64
+        },
+        {
+            "name": "Youps: Gamified Email Popups",
+            "old_rank": 60,
+            "new_rank": 65
+        },
+        {
+            "name": "Tip Quik | Tip Pop\u2011up in Cart",
+            "old_rank": 74,
+            "new_rank": 75
+        },
+        {
+            "name": "Quik \u2011 Quick / Bulk Order Page",
+            "old_rank": 75,
+            "new_rank": 76
         }
     ],
     "top_5": [
