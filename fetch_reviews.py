@@ -17,52 +17,70 @@ chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-blink-features=AutomationControlled")
 
 def fetch_reviews(app_url, app_name):
-    """Scrape latest reviews for a given app, including overall rating."""
+    """Scrape all reviews for a given app, iterating over pages until no more reviews exist."""
     reviews = []
     service = Service(CHROMEDRIVER_PATH)
     driver = webdriver.Chrome(service=service, options=chrome_options)
-    driver.get(app_url)
-    time.sleep(5)
 
-    # Extract the overall score before review iteration
-    try:
-        overall_element = driver.find_element(By.CSS_SELECTOR, ".app-reviews-metrics div:nth-child(2) [aria-label$='out of 5 stars']")
-        overall_rating = float(overall_element.get_attribute("aria-label").split(" ")[0])
-    except Exception as e:
-        print(f"⚠️ Could not find overall rating for {app_name}: {e}")
-        overall_rating = None  # Default to None if not found
+    page = 1  # Start from page 1
 
-    review_cards = driver.find_elements(By.CSS_SELECTOR, "[data-merchant-review]")
+    while True:
+        paged_url = f"{app_url}&page={page}"  # Append page number
+        print(f"📄 Scraping page {page} of reviews for {app_name}: {paged_url}")
 
-    for card in review_cards:
-        try:
-            # Extract rating from aria-label
-            rating_element = card.find_element(By.CSS_SELECTOR, "[aria-label$='out of 5 stars']")
-            rating = int(rating_element.get_attribute("aria-label").split(" ")[0])
+        driver.get(paged_url)
+        time.sleep(5)  # Keep static delay to avoid detection
 
-            # Extract date (next sibling div)
-            date_element = rating_element.find_element(By.XPATH, "./following-sibling::div")
-            date_text = date_element.text.replace("Edited ", "").strip()
+        # Check if reviews exist on this page
+        review_cards = driver.find_elements(By.CSS_SELECTOR, "[data-merchant-review]")
+        if not review_cards:
+            print(f"🚫 No reviews found on page {page}, stopping.")
+            break  # No reviews = No more pages, exit loop
 
-            # Extract content (direct child <p>)
-            content_element = card.find_element(By.CSS_SELECTOR, "[data-truncate-content-copy] > p")
-            content = content_element.text.strip()
+        for card in review_cards:
+            try:
+                # Extract rating from aria-label
+                rating_element = card.find_element(By.CSS_SELECTOR, "[aria-label$='out of 5 stars']")
+                rating = float(rating_element.get_attribute("aria-label").split(" ")[0])
 
-            reviews.append({
-                "app_name": app_name,
-                "app_url": app_url,
-                "date": date_text,
-                "star_rating": rating,
-                "content": content,
-                "overall_score": overall_rating  # ✅ Include overall score for each review
-            })
+                # Extract date (next sibling div)
+                date_element = rating_element.find_element(By.XPATH, "./following-sibling::div")
+                date_text = date_element.text.replace("Edited ", "").strip()
 
-        except Exception as e:
-            print(f"🔥 Error processing review: {e}")
+                # Extract content (direct child <p>)
+                content_element = card.find_element(By.CSS_SELECTOR, "[data-truncate-content-copy] > p")
+                content = content_element.text.strip()
+
+                # Extract overall score (first time per app)
+                overall_score = None
+                if page == 1:  # Only need to grab this once per app
+                    try:
+                        overall_element = driver.find_element(By.CSS_SELECTOR, ".app-reviews-metrics > div:nth-child(2) [aria-label$='out of 5 stars']")
+                        overall_score = float(overall_element.get_attribute("aria-label").split(" ")[0])
+                    except:
+                        print(f"⚠ Could not find overall rating for {app_name}")
+
+                reviews.append({
+                    "app_name": app_name,
+                    "date": date_text,
+                    "star_rating": rating,
+                    "content": content,
+                    "overall_score": overall_score
+                })
+
+            except Exception as e:
+                print(f"🔥 Error processing review: {e}")
+
+        # Check if there's a "Next" page
+        next_button = driver.find_elements(By.CSS_SELECTOR, "a[rel='next']")
+        if not next_button:
+            print(f"✅ All pages scraped for {app_name}.")
+            break  # No "Next" button → Last page reached
+
+        page += 1  # Move to next page
 
     driver.quit()
     return reviews
-
 
 def save_new_reviews(review_data):
     """Save new review data into a separate CSV file with a timestamp."""
