@@ -216,6 +216,7 @@ def compare_apps():
     """Compare current apps with past apps and detect ranking changes."""
     past_data = load_past_apps()
     past_apps = {app["name"]: app.get("rank", None) for app in past_data.get("all_apps", [])}
+    past_ranks = {app["name"]: app["rank"] for app in past_data.get("all_apps", [])}
 
     fetched_data = fetch_apps()
     current_apps = fetched_data["all_apps"]
@@ -232,6 +233,10 @@ def compare_apps():
         "ranking_changes": ranking_changes,
         "top_5": [app for app in current_apps if not app["ad"]][:5],  # Exclude ads, keep only first 5 organic apps
     }
+
+    # Update current apps with previous ranks
+    for app in current_apps:
+        app["previous_rank"] = past_ranks.get(app["name"], None)  # Assign None if no previous rank
 
     print(json.dumps(output, indent=4))
     save_current_apps(output)
