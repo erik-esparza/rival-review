@@ -24,6 +24,9 @@ chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-gpu")
 chrome_options.add_argument("--disable-dev-shm-usage")
 
+# Ensure data directories exist
+os.makedirs("data/csv_exports", exist_ok=True)  # ✅ This prevents crashes
+
 def clean_url(url):
     """Remove entire UTM parameters if 'surface' is found anywhere in the string."""
     parsed_url = urlparse(url)

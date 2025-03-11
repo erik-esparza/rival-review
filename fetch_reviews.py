@@ -16,6 +16,10 @@ chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-blink-features=AutomationControlled")
 
+# Ensure necessary folders exist
+os.makedirs("data/csv_exports", exist_ok=True)
+os.makedirs("data", exist_ok=True)  # Just in case other scripts rely on this
+
 def fetch_reviews(app_url, app_name):
     """Scrape all reviews for a given app, iterating over pages until no more reviews exist."""
     reviews = []
