@@ -9,12 +9,12 @@ RANKS_JSON = "data/past_apps.json"
 TREND_REPORT_CSV = "data/csv_exports/trend_analysis.csv"
 
 # Adjustable thresholds
-THRESHOLD_REVIEWS = 2    # Reviews in the lookback period to be considered "explosive"
-THRESHOLD_RANK_JUMP = 1   # Rank improvement threshold
+THRESHOLD_REVIEWS = 10    # Reviews in the lookback period to be considered "explosive"
+THRESHOLD_RANK_JUMP = 5   # Rank improvement threshold
 TOP_N = 5                 # Number of top competitors to track
 MAX_RANK_ANALYSIS = 15 * 20  # Limit analysis to the top 15 pages (approx. 20 apps per page)
-REVIEW_LOOKBACK_DAYS = 15  # ✅ Set dynamic review lookback window
-THRESHOLD_RATING_DROP = 0.5  # ✅ Minimum rating drop to flag an app
+REVIEW_LOOKBACK_DAYS = 30  # ✅ Set dynamic review lookback window
+THRESHOLD_RATING_DROP = 0.2  # ✅ Minimum rating drop to flag an app
 
 def main():
     # Ensure directory exists
