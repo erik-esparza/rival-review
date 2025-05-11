@@ -1,5 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+
 from selenium.webdriver.common.by import By
 from datetime import datetime
 import json
@@ -13,7 +15,7 @@ from urllib.parse import urlparse, parse_qs, urlencode
 # Constants
 SHOPIFY_SEARCH_URL = "https://apps.shopify.com/search?q=Quiz"
 DATA_FILE = "data/past_apps.json"
-CHROMEDRIVER_PATH = "/opt/homebrew/bin/chromedriver"  # Updated path
+## Chromedriver global path is replaced by the expression in the "driver" var
 CSV_FOLDER = "data/csv_exports"
 
 # Configure Selenium
@@ -41,8 +43,8 @@ BAD_URL_PATTERNS = re.compile(r"(categories|stories|sitemap|login|help|about|sup
 
 def fetch_apps():
     """Fetch app names and links using <a> href extraction."""
-    service = Service(CHROMEDRIVER_PATH)
-    driver = webdriver.Chrome(service=service, options=chrome_options)
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+
     
     all_apps = []
     page = 1

@@ -1,5 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+
 from selenium.webdriver.common.by import By
 from datetime import datetime
 import json
@@ -8,7 +10,7 @@ import time
 import csv
 
 # Constants
-CHROMEDRIVER_PATH = "/opt/homebrew/bin/chromedriver"
+## Chromedriver global path is replaced by the expression in the "driver" var
 CSV_FOLDER = os.path.join(os.getcwd(), "data/csv_exports")  # Ensure correct path
 
 # Configure Selenium
@@ -23,8 +25,7 @@ os.makedirs("data", exist_ok=True)  # Just in case other scripts rely on this
 def fetch_reviews(app_url, app_name):
     """Scrape all reviews for a given app, iterating over pages until no more reviews exist."""
     reviews = []
-    service = Service(CHROMEDRIVER_PATH)
-    driver = webdriver.Chrome(service=service, options=chrome_options)
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
     page = 1  # Start from page 1
     overall_score = None  # ✅ Keep track of last known valid overall score
